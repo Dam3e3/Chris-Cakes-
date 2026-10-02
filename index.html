@@ -3,57 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Chris Cakes | Cheesecakes en Girardot</title>
+
+  <!-- Logo 🍰 en la pestaña del navegador -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ff9a9e'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle'%3E🍰%3C/text%3E%3C/svg%3E">
+
   <style>
-    :root { --rosa:#ff6868; --crema:#fff8ec; --texto:#4a4a4a; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:Arial,sans-serif; background:var(--crema); color:var(--texto); }
-    header { padding:28px 20px; text-align:center; color:white; background:linear-gradient(135deg,#ff9a9e,#fecfef); }
-    h1 { margin:0; font-size:42px; }
-    header p { margin:8px 0 0; }
-    nav { position:sticky; top:0; z-index:10; padding:14px; text-align:center; background:white; box-shadow:0 2px 8px rgba(0,0,0,.06); }
-    nav a { margin:0 14px; color:#f56565; font-weight:bold; text-decoration:none; }
-    .hero { padding:72px 20px; text-align:center; background:#ffdede; }
-    .hero h2 { margin:0; font-size:36px; color:#f56565; }
-    .hero p { margin:14px 0 22px; }
-    .boton,.order { display:inline-block; padding:12px 26px; border:0; border-radius:30px; background:var(--rosa); color:white; font-weight:bold; text-decoration:none; cursor:pointer; }
-    .products { max-width:930px; margin:auto; padding:45px 20px; }
-    .section-title { margin:0 0 28px; color:#f56565; text-align:center; font-size:30px; }
-    .product-list { display:grid; gap:18px; }
-    .product-card { display:flex; overflow:hidden; min-height:190px; background:white; border-radius:16px; box-shadow:0 5px 16px rgba(0,0,0,.08); transition:transform .2s ease; }
-    .product-card:hover { transform:translateY(-4px); }
-    .img-box { position:relative; width:285px; min-width:285px; min-height:190px; background:linear-gradient(135deg,#ffd6dc,#fff0f3); }
-    .img-box::before { content:attr(data-emoji); position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:70px; }
-    .product-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-    .product-info { display:flex; flex:1; flex-direction:column; justify-content:center; padding:25px 28px; }
-    .product-top { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
-    .product-name { margin:0; color:#f56565; font-size:26px; }
-    .product-price { white-space:nowrap; color:#353535; font-size:26px; font-weight:bold; }
-    .product-description { margin:12px 0 18px; font-size:15px; line-height:1.5; }
-    .order { align-self:flex-start; padding:9px 22px; }
-    .about,.contact { padding:45px 20px; text-align:center; }
-    .about { background:white; }
-    .about p { max-width:650px; margin:auto; line-height:1.6; }
-    .contact { background:linear-gradient(135deg,#ff9a9e,#fecfef); }
-    .contact-info { max-width:550px; margin:auto; padding:20px; line-height:1.9; background:white; border-radius:13px; }
-    .contact-info a { color:#f56565; font-weight:bold; text-decoration:none; }
-    footer { padding:20px; color:white; text-align:center; background:var(--texto); }
-    @media (max-width:650px) {
-      h1 { font-size:34px; }
-      .hero h2 { font-size:28px; }
-      nav a { margin:0 5px; font-size:13px; }
-      .product-card { display:block; }
-      .img-box { width:100%; min-width:0; height:200px; }
-      .product-info { padding:18px; }
-      .product-name { font-size:21px; }
-      .product-price { font-size:21px; }
+    :root {
+      --rosa: #ff6868;
+      --crema: #fff8ec;
+      --texto: #4a4a4a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--crema);
+      color: var(--texto);
+    }
+
+    header {
+      padding: 28px 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 14px;
+      text-align: center;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    nav a {
+      margin: 0 14px;
+      color: #f56565;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 72px 20px;
+      text-align: center;
+      background: #ffdede;
+    }
+
+    .hero h2 {
+      margin: 0;
+      font-size: 36px;
+      color: #f56565;
+    }
+
+    .hero p {
+      margin: 14px 0 22px;
+    }
+
+    .boton,
+    .order {
+      display: inline-block;
+      padding: 12px 26px;
+      border: 0;
+      border-radius: 30px;
+      background: var(--rosa);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .boton:hover,
+    .order:hover {
+      background: #f45050;
+    }
+
+    .products {
+      max-width: 930px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    .section-title {
+      margin: 0 0 28px;
+      color: #f56565;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .product-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .product-card {
+      display: flex;
+      overflow: hidden;
+      min-height: 190px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .img-box {
+      position: relative;
+      width: 285px;
+      min-width: 285px;
+      min-height: 190px;
+      background: linear-gradient(135deg, #ffd6dc, #fff0f3);
+    }
+
+    .img-box::before {
+      content: attr(data-emoji);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+    }
+
+    .product-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      padding: 25px 28px;
+    }
+
+    .product-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .product-name {
+      margin: 0;
+      color: #f56565;
+      font-size: 26px;
+    }
+
+    .product-price {
+      white-space: nowrap;
+      color: #353535;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .product-description {
+      margin: 12px 0 18px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .order {
+      align-self: flex-start;
+      padding: 9px 22px;
+    }
+
+    .about,
+    .contact {
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    }
+
+    .contact-info {
+      max-width: 550px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.9;
+      background: white;
+      border-radius: 13px;
+    }
+
+    .contact-info a {
+      color: #f56565;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 20px;
+      color: white;
+      text-align: center;
+      background: var(--texto);
+    }
+
+    @media (max-width: 650px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      nav a {
+        margin: 0 5px;
+        font-size: 13px;
+      }
+
+      .product-card {
+        display: block;
+      }
+
+      .img-box {
+        width: 100%;
+        min-width: 0;
+        height: 200px;
+      }
+
+      .product-info {
+        padding: 18px;
+      }
+
+      .product-name {
+        font-size: 21px;
+      }
+
+      .product-price {
+        font-size: 21px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Chris Cakes</h1>
+    <h1>🍰 Chris Cakes</h1>
     <p>Cheesecakes artesanales en Girardot, Cundinamarca</p>
   </header>
 
@@ -72,71 +298,123 @@
 
   <section class="products" id="productos">
     <h2 class="section-title">Nuestros Productos</h2>
+
     <div class="product-list">
+
       <article class="product-card">
         <div class="img-box" data-emoji="🍓">
-          <img class="product-image" src="imagenes/fresa.jpg" alt="New York Cheesecake de Fresa" onerror="this.style.display='none'">
+          <img
+            class="product-image"
+            src="imagenes/fresa.jpg"
+            alt="New York Cheesecake de Fresa"
+            onerror="this.style.display='none'"
+          >
         </div>
+
         <div class="product-info">
           <div class="product-top">
             <h3 class="product-name">New York Cheesecake de Fresa</h3>
             <span class="product-price">$9.500</span>
           </div>
-          <p class="product-description">Cheesecake cremoso estilo New York con base de galleta y fresas naturales.</p>
-          <button class="order" onclick="ordenar('New York Cheesecake de Fresa')">Ordenar ahora</button>
+
+          <p class="product-description">
+            Cheesecake cremoso estilo New York con base de galleta y fresas naturales.
+          </p>
+
+          <button class="order" onclick="ordenar('New York Cheesecake de Fresa')">
+            Ordenar ahora
+          </button>
         </div>
       </article>
 
       <article class="product-card">
         <div class="img-box" data-emoji="🥭">
-          <img class="product-image" src="imagenes/maracuya.jpg" alt="Cheesecake de Maracuyá" onerror="this.style.display='none'">
+          <img
+            class="product-image"
+            src="imagenes/maracuya.jpg"
+            alt="Cheesecake de Maracuyá"
+            onerror="this.style.display='none'"
+          >
         </div>
+
         <div class="product-info">
           <div class="product-top">
             <h3 class="product-name">Cheesecake de Maracuyá</h3>
             <span class="product-price">$7.500</span>
           </div>
-          <p class="product-description">Suave y cremoso, con el toque ácido y tropical del maracuyá fresco.</p>
-          <button class="order" onclick="ordenar('Cheesecake de Maracuyá')">Ordenar ahora</button>
+
+          <p class="product-description">
+            Suave y cremoso, con el toque ácido y tropical del maracuyá fresco.
+          </p>
+
+          <button class="order" onclick="ordenar('Cheesecake de Maracuyá')">
+            Ordenar ahora
+          </button>
         </div>
       </article>
 
       <article class="product-card">
         <div class="img-box" data-emoji="🍰">
-          <img class="product-image" src="imagenes/torta-de-queso.jpg" alt="Torta de Queso" onerror="this.style.display='none'">
+          <img
+            class="product-image"
+            src="imagenes/torta-de-queso.jpg"
+            alt="Torta de Queso"
+            onerror="this.style.display='none'"
+          >
         </div>
+
         <div class="product-info">
           <div class="product-top">
             <h3 class="product-name">Torta de Queso</h3>
             <span class="product-price">$6.500</span>
           </div>
-          <p class="product-description">La clásica torta de queso casera, suave, dulce y con base crocante.</p>
-          <button class="order" onclick="ordenar('Torta de Queso')">Ordenar ahora</button>
+
+          <p class="product-description">
+            La clásica torta de queso casera, suave, dulce y con base crocante.
+          </p>
+
+          <button class="order" onclick="ordenar('Torta de Queso')">
+            Ordenar ahora
+          </button>
         </div>
       </article>
+
     </div>
   </section>
 
   <section class="about" id="nosotros">
     <h2 class="section-title">Sobre Chris Cakes</h2>
-    <p>Cheesecakes y tortas de queso hechos a mano con ingredientes frescos y mucho amor. Cada porción está preparada para hacer especial tu día.</p>
+
+    <p>
+      Cheesecakes y tortas de queso hechos a mano con ingredientes frescos y mucho amor.
+      Cada porción está preparada para hacer especial tu día.
+    </p>
   </section>
 
   <section class="contact" id="contacto">
     <h2 class="section-title">Contáctanos</h2>
+
     <div class="contact-info">
-      📞 WhatsApp: <a href="https://wa.me/573057083931" target="_blank">305 708 3931</a><br>
+      📞 WhatsApp:
+      <a href="https://wa.me/573057083931" target="_blank">305 708 3931</a>
+      <br>
       📍 Girardot, Cundinamarca
     </div>
   </section>
 
-  <footer>© 2026 Chris Cakes · Girardot, Cundinamarca</footer>
+  <footer>
+    © 2026 Chris Cakes · Girardot, Cundinamarca
+  </footer>
 
   <script>
     function ordenar(producto) {
       const telefono = "573057083931";
       const mensaje = "Hola Chris Cakes! Quiero ordenar: " + producto;
-      window.open("https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje), "_blank");
+
+      window.open(
+        "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje),
+        "_blank"
+      );
     }
   </script>
 </body>
