@@ -1,7 +1,7 @@
 # 🎂 Chris Cakes
 
 <p align="center">
-  **Un mundo de dulzura en cada detalle.**
+  Un mundo de dulzura en cada detalle.
 </p>
 
 <p align="center">
